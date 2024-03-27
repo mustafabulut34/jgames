@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import RoomList from '../components/RoomList';
 import {Button, ButtonGroup, Container, Form} from 'react-bootstrap';
 import {useLocation, useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import requireAuth from "../components/RequireAuth";
 import { createRoom, deleteRoom, fetchRooms, updateRoom } from '../api';
 
@@ -27,14 +27,6 @@ const RoomPage = () => {
     }
 
     const getRooms = async () => {
-        let params = "?page=" + currentPage
-        if (sortBy) {
-            params += '&sort=' + sortBy;
-        }
-        if (limit) {
-            params += '&limit=' + limit;
-        }
-
         try {
             const response = await fetchRooms(currentPage, sortBy, limit);
             if (response.ok) {

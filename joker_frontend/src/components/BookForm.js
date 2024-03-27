@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import {Modal, Button, Form} from 'react-bootstrap';
 import {useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import { createBooking } from '../api';
 
 const BookForm = ({show, room, startDate, endDate, onCancel}) => {
-    const token = useSelector(state => state.auth.token);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [selectedStartDate, setSelectedStartDate] = useState(startDate);

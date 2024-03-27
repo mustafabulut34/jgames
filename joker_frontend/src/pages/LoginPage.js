@@ -3,7 +3,6 @@ import {Container, Row, Col} from 'react-bootstrap';
 import LoginForm from '../components/LoginForm';
 import {useNavigate, Navigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import store from "../store";
 import {setAuth} from "../actions/tokenActions";
 import { auth } from '../api';
 
