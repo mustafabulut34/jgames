@@ -24,9 +24,10 @@ services:
       - '3000:3000'
     volumes:
       - ./joker_frontend:/app/frontend
+      - /app/frontend/node_modules
     depends_on:
       - backend
-  
+
   db:
     image: postgres:14-alpine
     ports:
